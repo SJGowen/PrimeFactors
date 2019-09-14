@@ -1,6 +1,7 @@
+using System;
 using System.Collections.Generic;
 
-namespace Tests
+namespace Primes
 {
     public static class PrimeFactors
     {
@@ -10,10 +11,9 @@ namespace Tests
 
             for (var divisor = 2; number > 1; divisor++)
             {
-                while (number % divisor == 0)
+                for (; number % divisor == 0; number /= divisor)
                 {
                     factors.Add(divisor);
-                    number /= divisor;
                 }
             }
 
