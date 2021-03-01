@@ -32,13 +32,19 @@ namespace Primes
             Assert.Equal(ExpectedList(19), Primes.PrimeFactors.Generate(19));
             Assert.Equal(ExpectedList(2, 2, 5), Primes.PrimeFactors.Generate(20));
             Assert.Equal(ExpectedList(3, 7), Primes.PrimeFactors.Generate(21));
+            Assert.Equal(ExpectedList(2, 11), Primes.PrimeFactors.Generate(22));
+            Assert.Equal(ExpectedList(23), Primes.PrimeFactors.Generate(23));
+            Assert.Equal(ExpectedList(2, 2, 2, 3), Primes.PrimeFactors.Generate(24));
+            Assert.Equal(ExpectedList(5, 5), Primes.PrimeFactors.Generate(25));
+            Assert.Equal(ExpectedList(2, 13), Primes.PrimeFactors.Generate(26));
+            Assert.Equal(ExpectedList(3, 3, 3), Primes.PrimeFactors.Generate(27));
+            Assert.Equal(ExpectedList(2, 2, 7), Primes.PrimeFactors.Generate(28));
+            Assert.Equal(ExpectedList(29), Primes.PrimeFactors.Generate(29));
+            Assert.Equal(ExpectedList(2, 3, 5), Primes.PrimeFactors.Generate(30));
             Assert.Equal(ExpectedList(2, 2, 3, 3, 5, 7, 11, 13), 
                 Primes.PrimeFactors.Generate(2 * 2 * 3 * 3 * 5 * 7 * 11 * 13));
         }
 
-        private IList<int> ExpectedList(params int[] expectedFactors)
-        {
-            return expectedFactors.ToList();
-        }
+        private IList<int> ExpectedList(params int[] expectedFactors) => expectedFactors.ToList();
     }
 }
